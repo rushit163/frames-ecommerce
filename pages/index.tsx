@@ -27,7 +27,7 @@ export default function Home({ properties }: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        className={`flex min-h-screen  bg-gradient-to-tr from-primary/60 to-secondary/60 flex-col items-center justify-between p-2 ${inter.className}`}
+        className={`flex min-h-screen flex-col items-center justify-between p-2 ${inter.className}`}
       >
         <div>Navbar</div>
         <section className="relative">
