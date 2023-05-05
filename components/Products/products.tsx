@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Cards from "./cards";
+import Cards from "./Cards";
 
 // interface Props {
 // 	prod: [ProductType];
