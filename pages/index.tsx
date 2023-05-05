@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import Cards from "@/components/Products/cards";
-import Products from "@/components/Products/products";
+import Cards from "@/components/products/Cards";
+import Products from "@/components/products/Products";
+import Navbar from "@/components/layouts/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +30,7 @@ export default function Home({ properties }: Props) {
       <main
         className={`flex min-h-screen flex-col items-center justify-between p-2 ${inter.className}`}
       >
-        <div>Navbar</div>
+        <Navbar/>
         <section className="relative">
           <Products/>
         </section>
