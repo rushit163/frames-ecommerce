@@ -1,5 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+type Product = {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+};
+
 type ProductState = {
   products: Product[];
   status: 'idle' | 'loading' | 'failed';
