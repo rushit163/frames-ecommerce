@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import Cards from "@/components/products/Cards";
+import Carousel from "@/components/products/Carousel";
 import Products from "@/components/products/Products";
 import Navbar from "@/components/layouts/Navbar";
 
@@ -28,9 +28,10 @@ export default function Home({ properties }: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        className={`flex min-h-screen flex-col items-center justify-between p-2 ${inter.className}`}
+        className={`flex min-h-screen flex-col items-center justify-between ${inter.className}`}
       >
         <Navbar/>
+        <Carousel/>
         <section className="relative">
           <Products/>
         </section>
