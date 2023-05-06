@@ -1,101 +1,56 @@
-import Link from 'next/link';
-import React, { useState } from 'react';
+import { NavLinks } from '../../utils/constants';
+import Link from 'next/link'
+import Headroom from 'react-headroom'
 
-
-const Navbar = () => {
-  const [nav, setNav] = useState(false);
-
-  const handleNav = () => {
-    setNav(!nav);
-  };
-
-
+export default function Navbar_v2() {
   return (
-    <div className='sticky bg-primary left-0 top-0 w-full ease-in duration-300 shadow-xl'>
-      <div className='flex flex-row sm:flex-col  items-center justify-center max-w-[1240px] m-auto items-center p-2 text-black'>
-        <div className='grid grid-cols-3'>
-        <Link href='/' className='col-span-2 justify-self-end pr-[17%]' >
-          <h1  className='font-primary text-4xl'>
-            Specs 
-          </h1>
-        </Link>
-        <div className='hidden sm:flex flex-row items-center justify-center md:pl-[70%] pl-[30%]'>
-        <div className="relative">
-            <input type="text" className="p-2 pl-8 rounded-2xl border border-gray-200 bg-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:border-transparent" placeholder="search..."/>
-            <svg className="w-4 h-4 absolute left-2.5 top-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-            </svg>
-        </div>
-        </div> 
-        </div>
-        <ul className='hidden sm:flex flex-row items-center justify-center'>
-          <li className='py-2 px-7'>
-            <Link href='/'>Home</Link>
-          </li>
-          <li className='py-2 px-7'>
-            <Link href='/#gallery'>Products</Link>
-          </li>
-          <li className='py-2 px-7'>
-            <Link href='/work'>About Us</Link>
-          </li>
-          <li className='py-2 px-7'>
-            <Link href='/contact'>Contact</Link>
-          </li>
-        </ul>
-
-        {/* Mobile Button */}
-        <div onClick={handleNav} className='block sm:hidden z-10 cursor-pointer'>
-          {nav ? (
+    <Headroom className="bg-white z-20 w-full shadow-md" style={{
+        webkitTransition: 'all .5s ease-in-out',
+        mozTransition: 'all .5s ease-in-out',
+        oTransition: 'all .5s ease-in-out',
+        transition: 'all .5s ease-in-out',
+        backgroundColor: '#fff',
+        boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+        padding: '8px 8px'
+      }}>
+        <div className="container mx-auto w-full">
+            <div className="flex items-center">
+                <p className='flex justify-end text-4xl w-[55%]'>
+                    FRAMEZ
+                </p>
+                <div className='flex justify-end w-[45%]'>
+                    <button className="flex justify-between border-2 border-black/50 rounded-full min-w-[40%] py-2 px-4">
+                        <input className="text-lg font-medium outline-none" placeholder="Search"/>
+                        <div className=''>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-Width="1.5" stroke="currentColor" className="w-6 h-6">
+                                <path stroke-Linecap="round" stroke-Linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                            </svg>
+                        </div>
+                    </button>
+                    <button className="mx-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-Width="1.5" stroke="currentColor" className="w-10 h-10">
+                            <path stroke-Linecap="round" stroke-Linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </button>
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-Width="1.5" stroke="currentColor" className="w-10 h-10">
+                            <path stroke-Linecap="round" stroke-Linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
             <div>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                <ul className='flex justify-center text-xl w-full mt-2'>
+                    {
+                        NavLinks.map((link, index) => (
+                            <li key={index} className="mx-2">
+                            <Link href={link.route}>{link.name}</Link>
+                            </li>
+                        ))
+                    }
+                </ul>
             </div>
-          ) : (
-            <div >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}  stroke="currentColor" className="w-6 h-6">
-                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
-                </svg>
-            </div>
-          )}
         </div>
-        {/* Mobile Menu */}
-        <div
-          className={
-            nav
-              ? 'sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-primary bg-opacity-70 backdrop-blur-sm text-center ease-in duration-300'
-              : 'sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-primary text-center ease-in duration-300 bg-opacity-70 backdrop-blur-sm'
-          }
-        >
-          <ul>
-            <li onClick={handleNav} className='p-4 text-4xl '>
-            <div className="relative">
-            <input type="text" className="p-2 pl-8 rounded border border-gray-200 bg-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:border-transparent" placeholder="search..." value="Gar" />
-            <svg className="w-4 h-4 absolute left-2.5 top-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-            </svg>
-        </div>
-            </li>
-            <li onClick={handleNav} className='p-4 text-4xl '>
-              <Link href='/'>Home</Link>
-            </li>
-            <li onClick={handleNav} className='p-4 text-4xl '>
-              <Link href='/#gallery'>Gallery</Link>
-            </li>
-            <li onClick={handleNav} className='p-4 text-4xl '>
-              <Link href='/work'>Work</Link>
-            </li>
-            <li onClick={handleNav} className='p-4 text-4xl'>
-              <Link href='/contact'>Contact</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-
-
-
-export default Navbar;
+    </Headroom>
+  )
+}

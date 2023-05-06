@@ -98,3 +98,22 @@ export const Products =  [
       price: 90.0
     }
   ];
+
+  export const NavLinks = [
+    {
+      name: "Home",
+      route: "/"
+    },
+    {
+      name: "Products",
+      route: "#products"
+    },
+    {
+      name: "About Us",
+      route: "/about"
+    },
+    {
+      name: "Contact Us",
+      route: "/contact"
+    }
+  ]
