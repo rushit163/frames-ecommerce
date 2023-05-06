@@ -3,6 +3,7 @@ import Head from "next/head";
 import Carousel from "@/components/products/Carousel";
 import Products from "@/components/products/Products";
 import Navbar from "@/components/layouts/Navbar";
+import Footer from '@/components/layouts/Footer'
 
 interface Property {
   images: Array<string>;
@@ -32,7 +33,7 @@ export default function Home({ properties }: Props) {
         <section className="relative">
           <Products/>
         </section>
-        <div>Footer</div>
+        <Footer/>
       </main>
     </>
   );
