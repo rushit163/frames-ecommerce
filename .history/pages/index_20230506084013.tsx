@@ -1,9 +1,25 @@
+<<<<<<< HEAD
+import Image from 'next/image'
+import { Inter } from 'next/font/google';
+import Admin_homePage from './Admin_homePage';
+import Add_Products from './Add_Products';
+const inter = Inter({ subsets: ['latin'] })
+
+export default function Home() {
+  return (
+    
+      <Add_Products/>
+    
+  )
+=======
 import Image from "next/image";
 import Head from "next/head";
-import Carousel from "@/components/products/Carousel";
+import { Inter } from "next/font/google";
+import Cards from "@/components/products/Cards";
 import Products from "@/components/products/Products";
 import Navbar from "@/components/layouts/Navbar";
-import Footer from '@/components/layouts/Footer'
+
+const inter = Inter({ subsets: ["latin"] });
 
 interface Property {
   images: Array<string>;
@@ -26,15 +42,15 @@ export default function Home({ properties }: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        className={`flex min-h-screen flex-col items-center justify-between ${inter.className}`}
+        className={`flex min-h-screen flex-col items-center justify-between p-2 ${inter.className}`}
       >
         <Navbar/>
-        <Carousel/>
         <section className="relative">
           <Products/>
         </section>
-        <Footer/>
+        <div>Footer</div>
       </main>
     </>
   );
+>>>>>>> 5f1877bec943b198a9dac718af08d23d29558072
 }
