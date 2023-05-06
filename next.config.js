@@ -5,6 +5,6 @@ const nextConfig = {
 
 module.exports = {
   images: {
-    domains: ['assets.website-files.com'],
+    domains: ['cdn.shopify.com'],
   },
 }

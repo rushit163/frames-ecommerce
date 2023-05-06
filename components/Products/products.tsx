@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Cards from "./Cards";
 
+
 export default function Products() {
 
   // const [categories, setCategories] = useState([
@@ -25,7 +26,7 @@ export default function Products() {
       href: "#",
       price: "$48",
       imageSrc:
-        "https://assets.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7dd88326f56afb8fc51a_menu-12.jpg",
+        "https://cdn.shopify.com/s/files/1/0015/2879/1092/products/1_e6f43647-5bb6-4773-9dae-85feeab650ec_1024x.jpg?v=1662905907",
       imageAlt: "Veggies",
     },
     {
@@ -34,7 +35,7 @@ export default function Products() {
       href: "#",
       price: "$35",
       imageSrc:
-        "https://assets.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7dd88326f56afb8fc51a_menu-12.jpg",
+        "https://cdn.shopify.com/s/files/1/0015/2879/1092/products/1_00fbc989-d682-418a-adbf-4b54866d226a_1024x.jpg?v=1662906285",
       imageAlt: "Veggies",
     },
     {
@@ -43,7 +44,7 @@ export default function Products() {
       href: "#",
       price: "$89",
       imageSrc:
-        "https://assets.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7dd88326f56afb8fc51a_menu-12.jpg",
+        "https://cdn.shopify.com/s/files/1/0015/2879/1092/products/1_b5bc2f5e-0207-4325-8b05-7ed443085fd5_1024x.jpg?v=1662906682",
       imageAlt: "Veggies",
     },
     {
@@ -52,7 +53,7 @@ export default function Products() {
       href: "#",
       price: "$35",
       imageSrc:
-        "https://assets.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7dd88326f56afb8fc51a_menu-12.jpg",
+        "https://cdn.shopify.com/s/files/1/0015/2879/1092/products/1_4277f171-c78c-4367-9ad0-18673cdd2966_1024x.jpg?v=1662906906",
       imageAlt: "Veggies",
     },
     {
@@ -61,7 +62,7 @@ export default function Products() {
       href: "#",
       price: "$35",
       imageSrc:
-        "https://assets.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7dd88326f56afb8fc51a_menu-12.jpg",
+        "https://cdn.shopify.com/s/files/1/0015/2879/1092/products/1_ce06b41c-b076-414b-8c4c-16739d2a0835_1024x.jpg?v=1662905390",
       imageAlt: "Veggies",
     },
     {
@@ -70,7 +71,7 @@ export default function Products() {
       href: "#",
       price: "$35",
       imageSrc:
-        "https://assets.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7dd88326f56afb8fc51a_menu-12.jpg",
+        "https://cdn.shopify.com/s/files/1/0015/2879/1092/products/1_7df8f65b-be49-4116-812c-7a489ea5b011_1024x.jpg?v=1662905010",
       imageAlt: "Veggies",
     },
     {
@@ -79,7 +80,7 @@ export default function Products() {
       href: "#",
       price: "$35",
       imageSrc:
-        "https://assets.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7dd88326f56afb8fc51a_menu-12.jpg",
+        "https://cdn.shopify.com/s/files/1/0015/2879/1092/products/1_20fb8d4a-a729-4968-aa87-d5b44717f739_1024x.jpg?v=1662904834",
       imageAlt: "Veggies",
     },
     {
@@ -88,7 +89,7 @@ export default function Products() {
       href: "#",
       price: "$35",
       imageSrc:
-        "https://assets.website-files.com/62b14afe3c1bf49d35ec8beb/62ba7dd88326f56afb8fc51a_menu-12.jpg",
+        "https://cdn.shopify.com/s/files/1/0015/2879/1092/products/1_34f5f883-7e77-4680-853f-ad064d01cc50_1024x.jpg?v=1674755564",
       imageAlt: "Veggies",
     },
   ];
@@ -136,7 +137,7 @@ export default function Products() {
         </div>
       </div> */}
 
-      <div id="products" className="mx-auto max-w-2xl px-4  sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div id="products" className="mx-auto max-w-2xl px-4  sm:py-24 sm:px-6 lg:max-w-full lg:px-20 ">
         <h2 className="sr-only">Products</h2>
         <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {products.map((product, index) => (

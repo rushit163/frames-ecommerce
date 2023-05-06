@@ -12,7 +12,8 @@ module.exports = {
         'secondary': "#7e57c2"
       },
       fontFamily: {
-        'primary': ['Playfair Display', 'serif'] 
+        'primary': ['Playfair Display', 'serif'],
+        'secondary': ['Nunito', 'sans-serif']
       }
     },
   },
