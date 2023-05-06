@@ -68,7 +68,7 @@ import { Products } from '../../utils/constants'
               <tbody className="bg-white divide-y divide-gray-200">
                 {currentItems.length === 0 ? (
                   <tr>
-                    <td colSpan="5" className="text-center p-4">
+                    <td colSpan={5} className="text-center p-4">
                       <h1>No items present in the table</h1>
                     </td>
                   </tr>
