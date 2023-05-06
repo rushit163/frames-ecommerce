@@ -5,9 +5,9 @@ import Headroom from 'react-headroom'
 export default function Navbar_v2() {
   return (
     <Headroom className="bg-white z-20 w-full shadow-md" style={{
-        webkitTransition: 'all .5s ease-in-out',
-        mozTransition: 'all .5s ease-in-out',
-        oTransition: 'all .5s ease-in-out',
+        WebkitTransition: 'all .5s ease-in-out',
+        MozTransition: 'all .5s ease-in-out',
+        OTransition: 'all .5s ease-in-out',
         transition: 'all .5s ease-in-out',
         backgroundColor: '#fff',
         boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',

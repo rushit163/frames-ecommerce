@@ -1,29 +1,22 @@
 import { useState } from "react";
 import Cards from "./Cards";
 
-// interface Props {
-// 	prod: [ProductType];
-// }
-
 export default function Products() {
-  // const handleAddToCart = (product: ProductType) => {
-  // 	dispatch({ type: 'ADD_TO_CART', payload: product });
-  // };
 
-  const [categories, setCategories] = useState([
-    "Bakery",
-    "Baking",
-    "Beverages",
-    "Canned and Packaged Foods",
-    "Dairy",
-    "Deli",
-    "Frozen Foods",
-    "Health and beauty",
-    "Household Supplies",
-    "Personal Care",
-    "Snacks and Sweets",
-    "Veggies and Fruits",
-  ]);
+  // const [categories, setCategories] = useState([
+  //   "Bakery",
+  //   "Baking",
+  //   "Beverages",
+  //   "Canned and Packaged Foods",
+  //   "Dairy",
+  //   "Deli",
+  //   "Frozen Foods",
+  //   "Health and beauty",
+  //   "Household Supplies",
+  //   "Personal Care",
+  //   "Snacks and Sweets",
+  //   "Veggies and Fruits",
+  // ]);
 
   const products = [
     {
@@ -101,22 +94,17 @@ export default function Products() {
   ];
 
   return (
-    <div className="mt-[10%] items-center justify-center">
+    <>
+    <div className="flex flex-col items-center mt-20">
+      <h1 className="text-5xl font-bold">
+        Checkout our <span className="italic">latest</span> & <span className="italic">trendy</span> frames 
+      </h1>
+      <p className="text-3xl ">
+        A wide range of collection of frames
+      </p>
+    </div>
 
-      <div className="xl:px-22 container mx-auto px-2 md:px-12">
-        <div className="text-center text-primaryText">
-          <div className="bg-sec block rounded-lg bg-secondaryBg px-2 py-12 shadow-lg md:py-16 md:px-12">
-            <h1 className="mb-12 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
-              Our Products <br />
-              <span className="text-xl font-normal tracking-normal">
-                Select from a Wide range of products available in out store.
-              </span>
-            </h1>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex items-center justify-center">
+      {/* <div className="flex items-center justify-center">
         <span className="ml-10 font-secondaryFont text-primaryText">
           Shop by category:
         </span>
@@ -146,9 +134,9 @@ export default function Products() {
             </ul>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="mx-auto max-w-2xl px-4 py-16 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div id="products" className="mx-auto max-w-2xl px-4  sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <h2 className="sr-only">Products</h2>
         <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {products.map((product, index) => (
@@ -156,7 +144,6 @@ export default function Products() {
           ))}
         </div>
       </div>
-
-    </div>
-  );
+    </>
+  )
 }
