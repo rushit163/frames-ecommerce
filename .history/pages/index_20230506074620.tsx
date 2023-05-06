@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     
-      <Add_Products/>
+      <Admin_homePage/>
     
   )
 }

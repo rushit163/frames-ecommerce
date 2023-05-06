@@ -119,8 +119,6 @@ const products = [
       pageNumbers.push(i);
     }
   
-    const tableHeight = `${currentItems.length * 8}rem`; // adjust this value to fit your table row height
-  
     const renderPageNumbers = pageNumbers.map(number => {
       return (
         <li
@@ -138,14 +136,14 @@ const products = [
         <Navbar />
         <div className="flex items-center justify-center h-screen md:pl-20 md:pr-20">
           <div className="w-full h-[80vh] text-sm">
-            <table className={`w-full ${tableHeight}`}>
+            <table className="w-full h-[40vh] ">
               <thead className="bg-gray-50">
                 <tr>
                   <th
                     scope="col"
                     className="px-4 py-2 text-left font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    Brand
+                    Name
                   </th>
                   <th
                     scope="col"

@@ -1,4 +1,4 @@
-import Navbar from '@/components/Navbar_Admin';
+import Navbar from '@/components/Navbar';
 import React from 'react';
 import { useState } from 'react';
 
@@ -119,8 +119,6 @@ const products = [
       pageNumbers.push(i);
     }
   
-    const tableHeight = `${currentItems.length * 8}rem`; // adjust this value to fit your table row height
-  
     const renderPageNumbers = pageNumbers.map(number => {
       return (
         <li
@@ -135,35 +133,39 @@ const products = [
   
     return (
       <>
-        <Navbar />
+        <Navbar/>
         <div className="flex items-center justify-center h-screen md:pl-20 md:pr-20">
-          <div className="w-full h-[80vh] text-sm">
-            <table className={`w-full ${tableHeight}`}>
+        <div className="w-full h-[calc(80vh-10rem)]">
+
+            <table className="w-full mt-20 mb-20">
               <thead className="bg-gray-50">
                 <tr>
                   <th
                     scope="col"
-                    className="px-4 py-2 text-left font-medium text-gray-500 uppercase tracking-wider"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    Brand
+                    Name
                   </th>
                   <th
                     scope="col"
-                    className="px-4 py-2 text-left font-medium text-gray-500 uppercase tracking-wider"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
                     Product Name
                   </th>
                   <th
                     scope="col"
-                    className="px-4 py-2 text-left font-medium text-gray-500 uppercase tracking-wider"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
                     Quantity
                   </th>
                   <th
                     scope="col"
-                    className="px-4 py-2 text-left font-medium text-gray-500 uppercase tracking-wider"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
                     Price
+                  </th>
+                  <th scope="col" className="relative px-6 py-3">
+                    <span className="sr-only">Edit</span>
                   </th>
                 </tr>
               </thead>
@@ -177,10 +179,10 @@ const products = [
                 ) : (
                   currentItems.map((product) => (
                     <tr key={product.id} className="hover:bg-gray-100">
-                      <td className="px-4 py-2 whitespace-nowrap">{product.name}</td>
-                      <td className="px-4 py-2 whitespace-nowrap">{product.productName}</td>
-                      <td className="px-4 py-2 whitespace-nowrap">{product.quantity}</td>
-                      <td className="px-4 py-2 whitespace-nowrap">{product.price}</td>
+                      <td className="px-6 py-4 whitespace-nowrap">{product.name}</td>
+                      <td className="px-6 py-4 whitespace-nowrap">{product.productName}</td>
+                      <td className="px-6 py-4 whitespace-nowrap">{product.quantity}</td>
+                      <td className="px-6 py-4 whitespace-nowrap">{product.price}</td>
                     </tr>
                   ))
                 )}

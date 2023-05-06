@@ -145,7 +145,7 @@ const products = [
                     scope="col"
                     className="px-4 py-2 text-left font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    Brand
+                    Name
                   </th>
                   <th
                     scope="col"
