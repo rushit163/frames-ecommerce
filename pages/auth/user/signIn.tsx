@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper";
 
-export default function auth() {
+export default function signIn() {
   return (
     <div className="">
       <section className="relative flex flex-wrap lg:h-screen lg:items-center">

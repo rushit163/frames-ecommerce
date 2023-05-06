@@ -1,17 +1,11 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Autoplay, Pagination, Navigation } from "swiper";
-import Image from "next/image";
 import Link from "next/link";
+import Carousel from "@/components/auth/Carousel";
 
-export default function auth() {
+export default function login() {
   return (
     <>
-      <section className="relative flex flex-wrap lg:h-screen lg:items-center">
-        <div className="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
+      <section className="flex flex-row-reverse lg:h-screen lg:items-center">
+        <div className="w-[25%] px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
           <div className="mx-auto max-w-lg text-center">
             <h1 className="text-2xl font-bold font-primary sm:text-3xl">
               Get started today!
@@ -94,7 +88,7 @@ export default function auth() {
             <div className="flex items-center justify-between">
               <p className="text-sm text-gray-500">
                 No account?
-                <Link className="underline" href="/auth/user/userSignIn">
+                <Link className="underline" href="/auth/user/signIn">
                   Sign up
                 </Link>
               </p>
@@ -107,59 +101,8 @@ export default function auth() {
             </div>
           </form>
         </div>
-
-        <div className="">
-          <Swiper
-            spaceBetween={30}
-            centeredSlides={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: true,
-            }}
-            navigation={true}
-            modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper"
-          >
-            <SwiperSlide>
-              <Image
-                src="/spec1.jpg"
-                alt="Picture of the author"
-                width={700}
-                height={500}
-                className="rounded-lg"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image
-                src="/spec2.jpg"
-                alt="Picture of the author"
-                width={700}
-                height={500}
-                className="rounded-lg"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image
-                src="/spec3.jpg"
-                alt="Picture of the author"
-                width={700}
-                height={500}
-                className="rounded-lg"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image
-                src="/spec4.jpg"
-                alt="Picture of the author"
-                width={700}
-                height={500}
-                className="rounded-lg"
-              />
-            </SwiperSlide>
-          </Swiper>
+        <div className="w-[75%] object-cover min-h-screen">
+          <Carousel />
         </div>
       </section>
     </>
