@@ -1,12 +1,12 @@
 import Navbar from '@/components/admin/Navbar';
 import React, { useState } from 'react';
 
-const addProducts = () => {
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [price, setPrice] = useState(0);
+const AddProducts = () => {
+  const [name, setName] = useState<string>('');
+  const [description, setDescription] = useState<string>('');
+  const [price, setPrice] = useState<number>(0);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     
   };
@@ -48,7 +48,7 @@ const addProducts = () => {
                     id="description"
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Enter product description"
-                    rows="5"
+                    rows={5}
                     value={description}
                     onChange={(event) => setDescription(event.target.value)}
                   ></textarea>
@@ -67,7 +67,9 @@ const addProducts = () => {
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Enter product price"
                     value={price}
-                    onChange={(event) => setPrice(event.target.value)}
+                    onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                      setPrice(Number(event.target.value))
+                    }
                   />
                 </div>
                 <div className="flex items-center justify-between">
@@ -87,4 +89,4 @@ const addProducts = () => {
   );
 };
 
-export default addProducts;
+export default AddProducts;

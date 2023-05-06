@@ -96,7 +96,7 @@ export default function Products() {
 
   return (
     <>
-    <div className="flex flex-col items-center mt-20">
+    <div id="products" className="flex flex-col items-center mt-20">
       <h1 className="text-5xl font-bold">
         Checkout our <span className="italic">latest</span> & <span className="italic">trendy</span> frames 
       </h1>
@@ -137,7 +137,7 @@ export default function Products() {
         </div>
       </div> */}
 
-      <div id="products" className="mx-auto max-w-2xl px-4  sm:py-24 sm:px-6 lg:max-w-full lg:px-20 ">
+      <div className="mx-auto max-w-2xl px-4  sm:py-24 sm:px-6 lg:max-w-full lg:px-20 ">
         <h2 className="sr-only">Products</h2>
         <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {products.map((product, index) => (
