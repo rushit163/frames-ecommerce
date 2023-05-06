@@ -4,11 +4,17 @@ import Carousel from "@/components/auth/Carousel";
 export default function login() {
   return (
     <>
-      <section className="flex flex-row-reverse lg:h-screen lg:items-center">
-        <div className="w-[25%] px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
-          <div className="mx-auto max-w-lg text-center">
+      <section className="flex  flex-col md:flex-row lg:h-screen lg:items-center ">
+        <div className="h-[10%] md:w-[75%]  object-cover md:min-h-screen md:order-1">
+          <Carousel />
+        </div>
+        <div className="w-[80%] px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24 md:order-2 mx-auto">
+          <div className="text-center items-center flex justify-center">
+            <p className="italic text-4xl w-full md:w-[55%]">FRAMEZ</p>
+          </div>
+          <div className="mx-auto max-w-lg text-center items-center">
             <h1 className="text-2xl font-bold font-primary sm:text-3xl">
-              Get started today!
+              Glad to have you back
             </h1>
 
             <p className="mt-4 text-gray-500 font-primary">
@@ -100,9 +106,6 @@ export default function login() {
               </button>
             </div>
           </form>
-        </div>
-        <div className="w-[75%] object-cover min-h-screen">
-          <Carousel />
         </div>
       </section>
     </>
