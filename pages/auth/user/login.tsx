@@ -4,8 +4,8 @@ import Carousel from "@/components/auth/Carousel";
 export default function login() {
   return (
     <>
-      <section className="flex  flex-col md:flex-row lg:h-screen lg:items-center ">
-        <div className="h-[10%] md:w-[75%]  object-cover md:min-h-screen md:order-1">
+      <section className="flex  flex-col md:flex-row lg:min-h-screen ">
+        <div className=" md:w-[75%]  object-cover md:min-h-screen md:order-1 overflow-y-hidden">
           <Carousel />
         </div>
         <div className="w-[80%] px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24 md:order-2 mx-auto">
