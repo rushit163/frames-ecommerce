@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import Carousel from "@/components/products/Carousel";
 import Products from "@/components/products/Products";
 import Navbar from "@/components/layouts/Navbar";
-
-const inter = Inter({ subsets: ["latin"] });
+import Footer from '@/components/layouts/Footer'
 
 interface Property {
   images: Array<string>;
@@ -35,7 +33,7 @@ export default function Home({ properties }: Props) {
         <section className="relative">
           <Products/>
         </section>
-        <div>Footer</div>
+        <Footer/>
       </main>
     </>
   );
