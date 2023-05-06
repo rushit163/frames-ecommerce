@@ -1,38 +1,45 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
-import type { RootState } from '../store'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-// Define a type for the slice state
-interface CounterState {
-  value: number
-}
+type CartState = {
+  items: {
+    productId: number;
+    quantity: number;
+  }[];
+};
 
-// Define the initial state using that type
-const initialState: CounterState = {
-  value: 0,
-}
+const initialState: CartState = {
+  items: [],
+};
 
-export const counterSlice = createSlice({
-  name: 'counter',
-  // `createSlice` will infer the state type from the `initialState` argument
+const cartSlice = createSlice({
+  name: 'cart',
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1
+    addItem: (state, action: PayloadAction<{ productId: number; quantity: number }>) => {
+      const existingItem = state.items.find((item) => item.productId === action.payload.productId);
+      if (existingItem) {
+        existingItem.quantity += action.payload.quantity;
+      } else {
+        state.items.push({ ...action.payload });
+      }
     },
-    decrement: (state) => {
-      state.value -= 1
+    removeItem: (state, action: PayloadAction<{ productId: number; quantity: number }>) => {
+      const index = state.items.findIndex((item) => item.productId === action.payload.productId);
+      if (index !== -1) {
+        const item = state.items[index];
+        if (item.quantity > action.payload.quantity) {
+          item.quantity -= action.payload.quantity;
+        } else {
+          state.items.splice(index, 1);
+        }
+      }
     },
-    // Use the PayloadAction type to declare the contents of `action.payload`
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload
+    resetCart: (state) => {
+      state.items = [];
     },
   },
-})
+});
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
+export const { addItem, removeItem, resetCart } = cartSlice.actions;
 
-// Other code such as selectors can use the imported `RootState` type
-export const selectCount = (state: RootState) => state.counter.value
-
-export default counterSlice.reducer
+export default cartSlice.reducer;
