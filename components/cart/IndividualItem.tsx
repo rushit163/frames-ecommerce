@@ -1,80 +1,88 @@
 import Image from "next/image";
+import { useState } from "react";
+interface Props{
+    id: Number,
+    Name : String,
+    productName : String,
+    qty:Number,
+    price:Number,
+}
 
-const IndividualItem = () => {
+const IndividualItem = ({id,Name,productName,price}:Props) => {
+    let quantity = 1
+    let [qty,setQty] = useState(quantity)
+    const increament = ()=>{
+      setQty(++qty)
+    }
+    const decrement = ()=>{
+      if(qty===1){
+      setQty(qty)
+      }else{
+      setQty(--qty)
+      }
+    }
     return (
-        <div className="flex border border-solid rounded-md p-2">
+      <div className="flex items-center gap-4">
+      <Image
+        src="https://cdn.shopify.com/s/files/1/0015/2879/1092/products/1_ce06b41c-b076-414b-8c4c-16739d2a0835_1024x.jpg?v=1662905390"
+        width={100}
+        height={100}
+        alt=""
+        className="rounded object-cover"
+      />
 
-        <div className="flex flex-col md:flex-row gap-10 p-6 items-center">
-          <Image
-            src="/assets/spec.png"
-            alt="My Image"
-            width={300}
-            height={300}
+      <div>
+        <h3 className="text-lg text-semibold text-gray-900">{productName}</h3>
+
+        <dl className="mt-0.5 space-y-px text-sm text-gray-600">
+          <div>
+            Price : {`${price}`}
+          </div>
+
+          <div>
+            {`${Name}`}
+          </div>
+        </dl>
+      </div>
+
+      <div className="flex flex-1 items-center justify-end gap-2">
+          <button 
+          className="py-1 px-3 border-2 border-indigo-500 text-indigo-500 font-medium rounded-lg text-lg text-center inline-flex items-center mr-2 hover:bg-indigo-500 hover:text-white  transform transition-all duration-400 ease-in-out hover:scale-105 hover:ease-out"
+          onClick={increament}
+          >+
+          </button>
+          <input
+            type="number"
+            id="Line1Qty"
+            className="h-8 mr-2 w-12 rounded border-gray-200 bg-gray-50 p-0 text-center text-xs text-gray-600 [-moz-appearance:_textfield] focus:outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
+         
+            value={qty}
           />
+          <button 
+          className="py-1 px-3 border-2 border-indigo-500 text-indigo-500 font-medium rounded-lg text-lg text-center inline-flex items-center mr-2 hover:bg-indigo-500 hover:text-white  transform transition-all duration-400 ease-in-out hover:scale-105 hover:ease-out"
+          onClick={decrement}
+          >-
+          </button>
+        <button className="text-gray-600 transition hover:text-red-600">
+          <span className="sr-only">Remove item</span>
 
-          <div className="flex flex-col gap-2 flex-wrap w-72 items-center text-center">
-            <p className="font-bold">
-              Specsmakers Blue Zero Unisex Computer Glasses Full Frame Round
-              Small 49 Metal TUL034
-            </p>
-            <p className="text-center w-full">684684688698</p>
-          </div>
-
-          <div className="flex gap-4 items-center">
-            <div className="rounded-md bg-secondary w-fit h-fit p-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="white"
-                width={20}
-                height={20}
-              >
-                <path d="M0 0h24v24H0z" fill="none" />
-                <path d="M12 3c.6 0 1 .4 1 1v7h7c.6 0 1 .4 1 1s-.4 1-1 1h-7v7c0 .6-.4 1-1 1s-1-.4-1-1v-7H4c-.6 0-1-.4-1-1s.4-1 1-1h7V4c0-.6.4-1 1-1z" />
-              </svg>
-            </div>
-
-            <div className="w-fit h-fit py-[5px]">
-              <input className="w-12 border border-gray-400 rounded-md py-[5px] text-center" />
-            </div>
-
-            <div className="rounded-md bg-secondary w-fit h-fit p-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="white"
-                width={20}
-                height={20}
-              >
-                <path d="M0 0h24v24H0z" fill="none" />
-                <path d="M19 13H5v-2h14v2z" />
-              </svg>
-            </div>
-          </div>
-
-          <div className="text-2xl flex flex-col items-center justify-center">
-            <span>₹ 1,250</span>
-            <span>Black</span>
-          </div>
-        </div>
-
-        <div className="items-start">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
             fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
             stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            width={20}
-            height={20}
+            className="h-4 w-4"
           >
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+            />
           </svg>
-        </div>
+        </button>
       </div>
+    </div>
     );
   };
   

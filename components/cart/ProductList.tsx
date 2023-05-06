@@ -1,19 +1,20 @@
 import IndividualItem from "./IndividualItem";
-
+import { Products } from "@/utils/constants";
 const ProductList = () => {
   return (
-    <div className="flex flex-col gap-4 w-full">
-      <div className="flex w-full justify-between items-center">
-        <span className="text-lg">Your Cart:  ₹17,980</span>
-        <button className="py-2 px-10 bg-black text-primary rounded-full">
-          Check Out
-        </button>
+    <div className="w-[80vw]">
+      <div className="">
+      <header className="text-center">
+        <h1 className="text-xl font-semibold text-gray-900 sm:text-3xl font-primary">Your Cart</h1>
+      </header>
+      <div className="mt-8">
+      <ul className="flex flex-col w-full space-y-4">
+      {Products.map(item=>{
+        return(<li><IndividualItem Name={item.name} id={item.id} productName={item.productName} qty={item.quantity} price={item.price}/></li>)
+      })}
+      </ul>
       </div>
-      <hr />
-      <IndividualItem/>
-      <IndividualItem/>
-      <IndividualItem/>
-      <IndividualItem/>
+      </div>
     </div>
   );
 };
