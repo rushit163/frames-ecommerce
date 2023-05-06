@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Carousel from "@/components/auth/Carousel";
+import { TbAlphabetLatin } from "react-icons/tb";
+import { GiConfirmed } from "react-icons/gi";
 
 export default function login() {
   return (
@@ -14,7 +16,7 @@ export default function login() {
           </div>
           <div className="mx-auto max-w-lg text-center items-center">
             <h1 className="text-2xl font-bold font-primary sm:text-3xl">
-              Glad to have you back
+              Let's get started
             </h1>
 
             <p className="mt-4 text-gray-500 font-primary">
@@ -23,6 +25,23 @@ export default function login() {
           </div>
 
           <form action="" className="mx-auto mb-0 mt-8 max-w-md space-y-4">
+            <div>
+              <label htmlFor="userName" className="sr-only">
+                Your Name
+              </label>
+
+              <div className="relative">
+                <input
+                  type="text"
+                  className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                  placeholder="Enter your Name"
+                />
+
+                <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
+                  <TbAlphabetLatin className="h-4 w-4 text-gray-400" />
+                </span>
+              </div>
+            </div>
             <div>
               <label htmlFor="email" className="sr-only">
                 Email
@@ -91,18 +110,36 @@ export default function login() {
               </div>
             </div>
 
+            <div>
+              <label htmlFor="confirmPassowrd" className="sr-only">
+                Confirm Password
+              </label>
+
+              <div className="relative">
+                <input
+                  type="password"
+                  className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
+                  placeholder="Confirm password"
+                />
+
+                <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
+                  <GiConfirmed className="h-4 w-4 text-gray-400" />
+                </span>
+              </div>
+            </div>
+
             <div className="flex items-center justify-between">
               <p className="text-sm text-gray-500">
-                No account?
-                <Link className="underline" href="/auth/user/signIn">
-                  Sign up
+                Already have an account?
+                <Link className="underline ml-1" href="/auth/user/login">
+                  Login
                 </Link>
               </p>
               <button
                 type="submit"
                 className="inline-block rounded-lg bg-secondary px-5 py-3 text-sm font-medium text-white"
               >
-                Login
+                Sign Up
               </button>
             </div>
           </form>
