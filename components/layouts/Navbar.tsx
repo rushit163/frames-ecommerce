@@ -4,9 +4,9 @@ import { useState } from 'react';
 import Headroom from 'react-headroom'
 
 export default function Navbar_v2() {
-    const [nav,setnav] = useState(false)
-    const handelnav = ()=>{
-        setnav(!nav)
+    const [nav,setNav] = useState(false)
+    const handleNav = () => {
+        setNav(!nav)
     }
   return (
     <>
@@ -44,7 +44,7 @@ export default function Navbar_v2() {
                         </svg>
                     </button>
                 </div>
-                <div onClick={handelnav} className='block md:hidden z-10 cursor-pointer'>
+                <div onClick={handleNav} className='block md:hidden z-10 cursor-pointer'>
                 {nav ? (
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -105,7 +105,7 @@ export default function Navbar_v2() {
                     {
                         NavLinks.map((link, index) => (
                             <li key={index} className="my-9 text-4xl">
-                            <Link href={link.route} onClick={handelnav}>{link.name}</Link>
+                            <Link href={link.route} onClick={handleNav}>{link.name}</Link>
                             </li>
                         ))
                     }
