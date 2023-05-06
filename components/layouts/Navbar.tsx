@@ -15,7 +15,7 @@ export default function Navbar_v2() {
       }}>
         <div className="container mx-auto w-full">
             <div className="flex items-center">
-                <p className='flex justify-end text-4xl w-[55%]'>
+                <p className='flex justify-end italic text-4xl w-[55%]'>
                     FRAMEZ
                 </p>
                 <div className='flex justify-end w-[45%]'>
