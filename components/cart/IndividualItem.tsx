@@ -6,9 +6,10 @@ interface Props{
     productName : String,
     qty:Number,
     price:Number,
+    key:Number
 }
 
-const IndividualItem = ({id,Name,productName,price}:Props) => {
+const IndividualItem = ({key,Name,productName,price}:Props) => {
     let quantity = 1
     let [qty,setQty] = useState(quantity)
     const increament = ()=>{

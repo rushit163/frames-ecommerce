@@ -9,8 +9,11 @@ const ProductList = () => {
       </header>
       <div className="mt-8">
       <ul className="flex flex-col w-full space-y-4">
-      {Products.map(item=>{
-        return(<li><IndividualItem Name={item.name} id={item.id} productName={item.productName} qty={item.quantity} price={item.price}/></li>)
+      {Products.map((item, index)=>{
+        return(
+        <li key={index}>
+          <IndividualItem Name={item.name} id={item.id} productName={item.productName} qty={item.quantity} price={item.price} key={item.id}/>
+        </li>)
       })}
       </ul>
       </div>
