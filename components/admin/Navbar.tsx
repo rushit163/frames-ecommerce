@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 
 const Navbar = () => {
-  const [nav, setNav] = useState(false);
+  const [nav, setNav] = useState<boolean>(false);
 
   const handleNav = () => {
     setNav(!nav);
