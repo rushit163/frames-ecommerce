@@ -2,9 +2,9 @@ import Navbar from '@/components/admin/Navbar';
 import { useState } from 'react';
 import { Products } from '../../utils/constants'
   
-  const dashboard = () => {
-    const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage, setItemsPerPage] = useState(10);
+  const Dashboard = () => {
+    const [currentPage, setCurrentPage] = useState<number>(1);
+    const [itemsPerPage, setItemsPerPage] = useState<number>(10);
   
     // Logic to get current items
     const indexOfLastItem = currentPage * itemsPerPage;
@@ -91,4 +91,4 @@ import { Products } from '../../utils/constants'
     );
   };
 
-export default dashboard;
+export default Dashboard;
